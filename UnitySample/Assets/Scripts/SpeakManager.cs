@@ -1,8 +1,4 @@
-﻿using UnityEngine;
-
-using System;
-using System.Collections;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 public class SpeakManager {
 
