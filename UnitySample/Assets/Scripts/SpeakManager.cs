@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using UnityEngine;
+using System.Diagnostics;
 
 public class SpeakManager {
 
@@ -23,7 +24,18 @@ public class SpeakManager {
 
     public event SayEndDelegate SayEndHandlers;    
 
-    public void Say ( string msg ) {
+    JSONObject speakJsonData;
+
+    public SpeakManager () {
+
+        TextAsset speakTexts = Resources.Load("SpeakTexts") as TextAsset;
+
+        speakJsonData = new JSONObject(speakTexts.ToString());
+    }
+
+    public void Say ( string msgKey ) {
+
+        string msg = speakJsonData.GetField(msgKey).str;
 
         Process process = new Process();
 

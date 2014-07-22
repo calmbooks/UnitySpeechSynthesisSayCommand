@@ -9,7 +9,7 @@ public class Test : MonoBehaviour {
 
         speakManager = new SpeakManager();	
 
-        speakManager.Say("こんにちは 世界");
+        speakManager.Say("HELLO_WORLD");
 
         speakManager.SayEndHandlers += SayEnd;
 	}
